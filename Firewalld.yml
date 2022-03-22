@@ -1,0 +1,14 @@
+---
+ - name: FirewallD
+   hosts: all
+   become: true
+   tasks:
+    - name: FirewallD rules
+      firewalld:
+        permanent: yes
+        immediate: yes
+        service: "{{ item }}"
+        state: enabled
+      with_items:
+       - http
+       - https
