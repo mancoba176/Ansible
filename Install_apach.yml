@@ -2,6 +2,7 @@
 - name: This sets up an httpd webserver
   hosts: all
   become: true
+  become_method: sudo
   tasks:
   - name: Install apache packages 
     yum:
