@@ -3,13 +3,9 @@
   hosts: all
   become: true
   tasks:
-    - name: Add the user 'Test_user' 
+    - name: Add the user '{{name}}' 
       ansible.builtin.user:
         name: "{{name}}"
         comment: Test User
 
-    - name: password expiration
-      ansible.builtin.user:
-        name: "{{name}}"    
-        password_expire_min: 7
-        password_expire_max: 90
+  
