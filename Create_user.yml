@@ -6,6 +6,6 @@
     - name: Add the user '{{name}}' 
       ansible.builtin.user:
         name: "{{name}}"
-        comment: Test User
-
+        comment: "{{comment}}"
+        password: "{{ newpassword|password_hash('sha512') }}"
   
