@@ -1,14 +1,15 @@
 ---
-- name: Create user with locked password
+- name: Ansible Create user 
   hosts: all
   become: true
   tasks:
-  user:
-    name: Test_user
-    comment: "Test User"
+    - name: Add the user 'Test_user' 
+      ansible.builtin.user:
+        name: Test_user
+        comment: Test User
 
-- name: Unlock password and set it to empty
-  command: passwd -d Test_user
+    - name: Unlock password and set it to empty
+      command: passwd -d Test_user
 
-- name: Expire password
-  command: chage -d 0 Test_user
+    - name: Expire password
+      command: chage -d 0 Test_user
