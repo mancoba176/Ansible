@@ -3,10 +3,10 @@
   become: true
   
   tasks:
-   - name: Install falcon
-     src: falcon-sensor-6.22.0-11906.el8.x86_64
-     yum:
-       name: falcon-sensor
-       state: started
+  - name: Install falcon
+    src: falcon-sensor-6.22.0-11906.el8.x86_64
+    yum:
+      name: falcon-sensor
+      state: started
          
     
