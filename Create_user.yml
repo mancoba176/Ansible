@@ -5,11 +5,10 @@
   tasks:
     - name: Add the user 'Test_user' 
       ansible.builtin.user:
-        name: Test_user
+        name: {{ "name" }}
         comment: Test User
 
-    - name: Unlock password and set it to empty
-      command: passwd -d Test_user
-
-    - name: Expire password
-      command: chage -d 0 Test_user
+    - name: password expiration
+      ansible.builtin.user:       
+        password_expire_min: 7
+        password_expire_max: 90
