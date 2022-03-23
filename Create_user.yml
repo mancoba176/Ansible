@@ -9,6 +9,7 @@
         comment: Test User
 
     - name: password expiration
-      ansible.builtin.user:       
+      ansible.builtin.user:
+        name: "{{name}}"    
         password_expire_min: 7
         password_expire_max: 90
