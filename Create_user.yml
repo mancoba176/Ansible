@@ -3,7 +3,7 @@
   hosts: all
   become: true
   tasks:
-    - name: Add the user '{{name}}' 
+    - name: Add the user '{{name}}' and Password
       ansible.builtin.user:
         name: "{{name}}"
         comment: "{{comment}}"
