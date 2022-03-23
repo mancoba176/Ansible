@@ -2,6 +2,7 @@
 - name: Create user with locked password
   hosts: all
   become: true
+  tasks:
   user:
     name: Test_user
     comment: "Test User"
