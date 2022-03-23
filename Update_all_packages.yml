@@ -7,9 +7,13 @@
       name: '*'
       state: latest
       update_cache: yes
-      update_only: yes
+      update_only: no
     register: yum_update_status
+    
+  - name: Show Update details
+    debug:
+     msg: "{{ yum_update_status }}"
 
-  - name: Remove packates not needed anymore
+  - name: Remove packages not needed anymore
     yum:
       autoremove: yes
