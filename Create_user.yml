@@ -1,0 +1,10 @@
+---
+- name: Ansible Create user functionlity module demo
+  hosts: all
+  become: true
+  tasks:
+    - name: Add the user 'Test_user' 
+      ansible.builtin.user:
+        name: Test_user
+        comment: Test User      
+        password: 'Connections#900'
