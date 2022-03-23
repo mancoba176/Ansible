@@ -1,10 +1,11 @@
 ---
-- name: Ansible Create user functionlity module demo
-  hosts: all
-  become: true
-  tasks:
-    - name: Add the user 'Test_user' 
-      ansible.builtin.user:
-        name: Test_user
-        comment: Test User      
-        password: '1166e89468bb17187fbab632c3565fbe3d72342167b193a09a9473e392e1c535'
+- name: Create user with locked password
+  user:
+    name: Test_user
+    comment: "Test User"
+
+- name: Unlock password and set it to empty
+  command: passwd -d Test_user
+
+- name: Expire password
+  command: chage -d 0 Test_user
