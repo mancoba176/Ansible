@@ -1,37 +1,12 @@
 ---
 - hosts: 10.169.78.136
-  become: no
-  gather_facts: no
-  vars:
-    crowdstrike_api_url: 'https://api.crowdstrike.com'
-  pre_tasks:
-    - ansible.builtin.assert:
-        that:
-          - "crowdstrike_client_id | d('') != ''"
-          - "crowdstrike_client_secret | d('') != ''"
-        fail_msg: "'crowdstrike_client_id' and 'crowdstrike_client_secret' must be defined"
-        quiet: true
+  become: true
+  
   tasks:
-    - name: CROWDSTRIKE - AUTHENTICATE API
-      ansible.builtin.uri:
-        url: "{{ crowdstrike_oauth2_token_url | d(crowdstrike_api_url + '/oauth2/token') }}"
-        return_content: yes
-        method: POST
-        body_format: form-urlencoded
-        status_code: 201
-        body:
-          client_id: "{{ crowdstrike_client_id }}"
-          client_secret: "{{ crowdstrike_client_secret }}"
-      register: oauth_request
+   - name: Install falcon
+     src: falcon-sensor-6.22.0-11906.el8.x86_64
+     yum:
+       name: falcon-sensor
+       state: started
+         
     
-    - name: CROWDSTRIKE - GET AVAILABLE LINUX CLIENTS
-      ansible.builtin.uri:
-        url: "{{ crowdstrike_api_url + '/sensors/combined/installers/v1' + crowdstrike_client_filter | d('?filter=platform:%27linux%27') }}"
-        return_content: yes
-        method: GET
-        status_code: 200
-        headers:
-          Accept: 'application/json'
-          Authorization: "Bearer {{ oauth_request['json']['access_token'] }}"
-          Content-Type: 'application/json'
-      register: client_list 
