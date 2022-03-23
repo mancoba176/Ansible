@@ -1,5 +1,6 @@
 ---
-- hosts: 10.169.78.136
+- name: Falcon
+  hosts: 10.169.78.136
   become: true
   
   tasks:
