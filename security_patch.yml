@@ -1,0 +1,13 @@
+---
+- name: Security Patch
+  hosts: all
+  become: true
+  tasks:
+  - name: Security Patch 
+    yum:
+      name: '*'  
+      state: latest
+      security: yes
+     
+ ---    
+      
