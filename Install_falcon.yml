@@ -1,11 +1,16 @@
 ---
-- name: This Installs Falcon
-  hosts: 10.169.78.136
-  become: true
+-
+  hosts: ugadmin
+  become: yes
   tasks:
-  - name: Install Falcon 
+  - name: copy falcon rpm
+    copy:
+      dest: /home/ugadmin/
+      src: /home/ugadmin/falcon-sensor-6.22.0-11906.el7.x86_64.rpm
+  - name: install new falcon
     yum:
-      name: falcon-sensor-6.22.0-11906.el8.x86_64.rpm    
-      state: installed
-  
+      state: present
+      name: /home/ugadmin/falcon-sensor-6.22.0-11906.el7.x86_64.rpm
+  - name: setup and run falcon
+    script: /home/ugadmin/setup.sh
     
