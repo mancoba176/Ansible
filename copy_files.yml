@@ -2,9 +2,7 @@
 - name: Copy File
   hosts: all
   become: true
-  tasks:
-    - name: Transfer file from ServerA to ServerB
-      synchronize:
-        src: /home/mancobd_sa/testfile.txt/on/10.169.78.134
-        dest: /home/mancobd_sa/on/10.169.78.136
-      delegate_to: 10.169.78.134
+  tasks:    
+   - name: Copy Remote-To-Remote (from serverA to serverB)
+     synchronize: src=/home/mancobd_sa/testfile.txt dest=/home/mancobd_sa/
+     delegate_to: 10.169.78.134
