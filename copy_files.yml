@@ -1,0 +1,10 @@
+---
+- name: Copy File
+  hosts: all
+  become: true
+  tasks:
+    - name: Transfer file from ServerA to ServerB
+      synchronize:
+        src: /home/mancobd_sa/on/10.169.78.134
+        dest: /home/mancobd_sa/on/10.169.78.136
+      delegate_to: 10.169.78.134
