@@ -6,7 +6,9 @@
     - name: Copy Remote-To-Remote (from serverA to serverB)
       copy:
         src: /home/mancobd_sa/testfile.txt
-        dest: /home/mancobd_sa
+        dest: /home/mancobd_sa/
         owner: root
         group: root
         mode: '0644'
+      ignore_errors: "{{ ansible_check_mode }}"
+       
