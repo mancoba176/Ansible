@@ -18,8 +18,4 @@
     service:
       name: httpd 
       state: started
-    register: running_status
-    
-  - name: Overall Details
-    debug:
-     msg: "{{ running_status }}"  
+      
