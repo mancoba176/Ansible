@@ -4,5 +4,9 @@
   become: true
   tasks:    
    - name: Copy Remote-To-Remote (from serverA to serverB)
-     synchronize: src=/home/mancobd_sa/testfile.txt dest=/home/mancobd_sa/
-     delegate_to: 10.169.78.134
+     copy:
+       src:/home/mancobd_sa/testfile.txt
+       dest:/home/mancobd_sa
+       owner:root
+       group:root
+       mode:'0644'
