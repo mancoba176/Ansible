@@ -8,5 +8,9 @@
       name: '*'  
       state: latest
       security: yes
-        
+      register: patch_details_status
+    
+  - name: Show Patch Details
+    debug:
+     msg: "{{ patch_details_status }}"  
       
