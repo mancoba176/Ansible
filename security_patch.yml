@@ -8,7 +8,7 @@
       name: '*'  
       state: latest
       security: yes
-      register: patch_details_status
+    register: patch_details_status
     
   - name: Show Patch Details
     debug:
