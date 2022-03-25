@@ -8,7 +8,18 @@
     yum:
       name: httpd
       state: present
+    register: apache_status
+    
+  - name: Show Apache Details
+    debug:
+     msg: "{{ apache_status }}" 
+
   - name: ensure httpd is running
     service:
       name: httpd 
       state: started
+    register: running_status
+    
+  - name: Overall Details
+    debug:
+     msg: "{{ running_status }}"  
