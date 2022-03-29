@@ -3,7 +3,7 @@
    hosts: all
    become: true
    tasks:
-     - name: Create a 2048-bit SSH key for user '{username}'
+     - name: Create a 2048-bit SSH key for user '{{username}}'
        ansible.builtin.user:
          name: "{{username}}"
          generate_ssh_key: yes
