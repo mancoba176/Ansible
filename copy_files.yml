@@ -5,10 +5,10 @@
   tasks:    
     - name: Copy Remote-To-Remote (from serverA to serverB)
       copy:
-        src: /home/mancobd_sa/testfile.txt
+        src: 10.169.78.134/home/mancobd_sa/testfile.txt
         dest: /home/mancobd_sa/
-        owner: root
-        group: root
+        owner: mancobd_sa
+        group: mancobd_sa
         mode: '0644'
       ignore_errors: "{{ ansible_check_mode }}"
        
