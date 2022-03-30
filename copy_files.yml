@@ -5,8 +5,8 @@
   tasks:    
     - name: example copying file with owner and permissions
       copy:
-        src: /home/mancobd_sa/testfile.txt
-        dest: /home/mancobd_sa/
+        src: "{{srcname}}"
+        dest: "{{destname}}"
         owner: mancobd_sa
         group: mancobd_sa
         mode: 0644
