@@ -7,7 +7,7 @@
             command: "{{item}}"
             with_items:
               - df -h
-              - free
+              - free -g
             register: item         
           - debug:
               msg: "{{item}}"
