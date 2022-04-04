@@ -4,7 +4,7 @@
   become: true
   tasks:
           - name: Disk usage from command module
-            command: "{{item}}"
+            shell: "{{item}}"
             with_items:
               - df -h
               - free -m
