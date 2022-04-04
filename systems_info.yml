@@ -11,8 +11,6 @@
               - vmstat
             register: item         
           - debug:
-              msg:
-                - "{{item.item[0].stdout_lines}}"  
-                - "{{item.item[1].stdout_lines}}" 
-                - "{{item.item[2].stdout_lines}}" 
+              msg: "{{item.stdout_lines}}"
+                 
             
