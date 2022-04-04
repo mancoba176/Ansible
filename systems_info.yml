@@ -8,6 +8,7 @@
             register: space
           - debug:
                   var: space.stdout_lines
+                  
           - name: Memory usage
             command: free
             register: memusage
