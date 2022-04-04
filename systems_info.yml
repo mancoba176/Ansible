@@ -10,5 +10,5 @@
               - free
             register: item         
           - debug:
-                  var: item.stdout_lines
+              msg: "{{item.msg.split('\n') }}"
            
