@@ -4,10 +4,11 @@
   become: true
   tasks:
           - name: Disk usage from command module
-            command: df -h
-            register: space
-            command: free
-            register: memusage
+            command: "{{item}}"
+            with_items:
+              - df -h
+              - free
+            register: items         
           - debug:
-                  var: memusage|space.stdout_lines
+                  var: items.stdout_lines
            
