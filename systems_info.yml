@@ -8,7 +8,7 @@
             with_items:
               - df -h
               - free -m
-              - top -i
+              - vmstat
             register: item         
           - debug:
               msg: "{{item}}"
