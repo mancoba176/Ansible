@@ -10,5 +10,5 @@
               - free
             register: item         
           - debug:
-              msg: "{{item.msg.split('\n') }}"
+              msg: "{{item}}"
            
