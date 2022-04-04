@@ -8,7 +8,7 @@
             with_items:
               - df -h
               - free
-            register: items         
+            register: item         
           - debug:
-                  var: items.stdout_lines
+                  var: item.stdout_lines
            
