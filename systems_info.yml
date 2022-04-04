@@ -12,7 +12,7 @@
             register: item         
           - debug:
               msg:
-                - "{{item.items[0].stdout_lines}}"  
-                - "{{item.items[1].stdout_lines}}" 
-                - "{{item.items[2].stdout_lines}}" 
+                - "{{item.item[0].stdout_lines}}"  
+                - "{{item.item[1].stdout_lines}}" 
+                - "{{item.item[2].stdout_lines}}" 
             
