@@ -10,4 +10,4 @@
       copy:
         content: "{{ myshell_output.stdout }}"
         dest: "/home/mancobd_sa/hello.txt"
-      delegate_to: localhost
+      delegate_to: 10.169.78.136
