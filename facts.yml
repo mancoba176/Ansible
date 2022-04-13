@@ -11,3 +11,9 @@
         - 'ansible_distribution'
         - 'ansible_machine_id'
         - 'ansible_*_mb'
+    register: details
+    
+  - name: Show Details
+    debug:
+     msg: "{{ details }}"  
+      
