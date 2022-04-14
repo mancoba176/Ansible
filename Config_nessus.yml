@@ -3,11 +3,11 @@
   become: yes
   vars:
     nessus_key: 00abcd00000efgh11111i0k222lmopq3333st4455u66v777777w88xy9999zabc00 
-    agent_group: webservers
+    agent_group: all
     agent_host: cloud.tenable.com 
     agent_port: 443
-    agent_file_src: /tmp/NessusAgent-7.6.1-es7.x86_64.rpm 
-    agent_file_dest: /tmp/NessusAgent-7.6.1-es7.x86_64.rpm 
+    agent_file_src: /home/mancobd_sa/NessusAgent-7.2.0-es6.x86_64.rpm 
+    agent_file_dest: /home/mancobd_sa/NessusAgent-7.2.0-es6.x86_64.rpm 
   tasks:
   - name: Check link status
     shell: /opt/nessus_agent/sbin/nessuscli agent status; true
