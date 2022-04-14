@@ -2,10 +2,10 @@
 - hosts: all
   become: yes
   vars:
-    nessus_key: 00abcd00000efgh11111i0kv777777w88xy9999zabc00 
-    agent_group: all
-    agent_host: cloud.tenable.com 
-    agent_port: 443
+    nessus_key: cc50dd66a5498c7b7b5f8cb6d5957571eb0e14d9ce89fd741b59b1b3f91f6e90 
+    agent_group: SEAGHA-SZ
+    agent_host: 172.24.0.81 
+    agent_port: 8834
     agent_file_src: /home/mancobd_sa/NessusAgent-7.2.0-es6.x86_64.rpm 
     agent_file_dest: /home/mancobd_sa/NessusAgent-7.2.0-es6.x86_64.rpm 
   tasks:
