@@ -4,7 +4,7 @@
    become: true
    tasks:
     - name: shell command
-      shell: lsblk && hostname && uptime
+      shell: hostname && uptime
       register: myshell_output
     - name: copy the output to a local file
       copy:
