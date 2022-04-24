@@ -5,4 +5,4 @@
    tasks:
     - name: shell command
       shell: hostname && uptime >> NewTest.txt   
-      delegate_to: 10.169.78.135
+      
