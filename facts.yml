@@ -8,4 +8,6 @@
   - name: Show Details
     debug:
      msg: "OS NAME : {{ ansible_distribution }}"  
+     msg: "Architecture : {{ ansible_architecture }}"
+     msg: "Version : {{ ansible_distribution_version }}"
       
