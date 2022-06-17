@@ -4,5 +4,5 @@
    become: true
    tasks:
     - name: shell command
-      shell: hostname && uptime >> NewTest.txt   
+      shell: chage -M 40 Mancoba  
       
