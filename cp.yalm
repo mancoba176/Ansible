@@ -1,0 +1,8 @@
+---
+- name: Copy File
+  hosts: all
+  become: true
+  tasks:    
+    - name: example copying file with owner and permissions
+      shell: cp /home/mancobd_sa/accountInfo.sh /home
+        
