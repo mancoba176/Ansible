@@ -3,6 +3,8 @@
   hosts: all
   become: true
   tasks:    
-    - name: example copying file with owner and permissions
-      shell: cp /home/mancobd_sa/accountInfo.sh /home
+    -  name: copy file from local host to remote host (absolute path)
+       copy:
+         src: $HOME/test_file
+         dest: $HOME/test_file
         
