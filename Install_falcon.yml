@@ -5,12 +5,12 @@
   tasks:
   - name: copy falcon rpm
     copy:
-      dest: /home/mancobd_sa/
-      src: /home/mancobd_sa/falcon-sensor-6.22.0-11906.el7.x86_64.rpm
+      dest: /home/testuser/
+      src: /home/testuser/falcon-sensor-6.22.0-11906.el7.x86_64.rpm
   - name: install new falcon
     yum:
       state: present
-      name: /home/mancobd_sa/falcon-sensor-6.22.0-11906.el7.x86_64.rpm
+      name: /home/testuser/falcon-sensor-6.22.0-11906.el7.x86_64.rpm
   - name: setup and run falcon
-    script: /home/mancobd_sa/setup.sh
+    script: /home/testuser/setup.sh
     
