@@ -1,7 +1,0 @@
-plugin: servicenow.servicenow.now
-table: cmdb_ci_solaris_instance
-fields: [name]
-keyed_groups:
-  - key: sn_name | lower
-    prefix: ''
-    separator: ''
