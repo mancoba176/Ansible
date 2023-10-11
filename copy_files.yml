@@ -7,8 +7,8 @@
       copy:
         src: "{{srcname}}"
         dest: "{{destname}}"
-        owner: mancobd_sa
-        group: mancobd_sa
+        owner: testuser
+        group: testuser
         mode: 0644
        
     
