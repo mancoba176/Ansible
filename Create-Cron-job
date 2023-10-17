@@ -1,0 +1,10 @@
+---
+- hosts: servers
+  tasks:
+    - name: Ensure cron job exists
+      ansible.builtin.cron:
+        name: "My Cron Job"
+        user: "root"
+        minute: "0"
+        hour: "2"
+        job: "/path/to/your/script.sh >> /path/to/your/logfile.log 2>&1"
