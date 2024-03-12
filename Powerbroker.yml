@@ -18,7 +18,7 @@
 
 
      -  name: Join real
-        shell: echo Blackninja@123456 | realm join test.local -U Administrator
+        shell: echo password123 | realm join test.local -U Administrator
         register: output
         ignore_errors: true
 
